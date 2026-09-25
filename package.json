@@ -7,16 +7,42 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^13.5.0",
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/react-router-dom": "^5.3.3",
+    "autoprefixer": "^10.6.1",
+    "lucide-react": "^1.48.0",
+    "postcss": "^8.5.28",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4",
     "react-scripts": "5.0.1",
+    "tailwindcss": "^3.4.19",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll=false --testPathPattern=src/__tests__",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.{ts,tsx}",
+      "src/pages/**/*.{ts,tsx}",
+      "src/utils/**/*.{ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +61,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-router": "^7.18.4",
+    "typescript": "^4.9.5"
   }
 }
